@@ -15,6 +15,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
+      - run: npm ci
       - name: Install PW
         run: npx playwright install --with-deps
       - name: Run PW tests
