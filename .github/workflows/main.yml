@@ -60,8 +60,8 @@ jobs:
         continue-on-error: true
         uses: peaceiris/actions-gh-pages@v4
         with:
-          PRESONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-result 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
           
         
