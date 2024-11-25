@@ -4,33 +4,42 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
-  workflow_dispatch: 
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 0 * * *'
 
 jobs: 
   test: 
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - run: npm ci
+      - name: Instal deps
+        run: npm ci
       
       - name: Install PW
         run: npx playwright install --with-deps
+        
       - name: Run PW tests
         run: npx playwright test
-        
-      - uses: actions/upload-artifact@v4
+
+      - name: Upload PW results  
+        uses: actions/upload-artifact@v4
         if: always()
         continue-on-error: true
         with: 
           name: test-results
           path: test-results
           retention-days: 10
-          
-      - uses: actions/upload-artifact@v4
+
+      - name: Upload Allure results      
+        uses: actions/upload-artifact@v4
         if: always()
         continue-on-error: true
         with: 
@@ -44,8 +53,9 @@ jobs:
         with: 
           ref: gh-pages
           path: gh-pages
-          
-      - uses: simple-elf/allure-report-action@master
+
+      - name: Generate Allure report    
+        uses: simple-elf/allure-report-action@master
         if: always()
         continue-on-error: true
         id: allure-report
@@ -56,7 +66,7 @@ jobs:
           allure_history: allure-history
           keep_reports: 10
           
-      - name: deploy-report
+      - name: Deploy Allure report
         if: always()
         continue-on-error: true
         uses: peaceiris/actions-gh-pages@v4
