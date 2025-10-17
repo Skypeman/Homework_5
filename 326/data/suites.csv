@@ -1,7 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","4220","Граница инпута при :focus состоянии имеет корректный цвет","chromium","Tue Oct 07 01:58:05 UTC 2025","passed","Tue Oct 07 01:58:10 UTC 2025","Модуль Поиск","search.test.js","",""
-"","5203","Повторный поиск по запросу через меню выдаёт корректный URL","chromium","Tue Oct 07 01:57:57 UTC 2025","passed","Tue Oct 07 01:58:02 UTC 2025","Модуль Поиск","search.test.js","",""
-"","7924","Поиск по запросу через меню выдаёт корректные результаты","chromium","Tue Oct 07 01:57:22 UTC 2025","passed","Tue Oct 07 01:57:30 UTC 2025","Модуль Поиск","search.test.js","",""
-"","3422","Кнопка ""поиск"" недоступна при пустом поле поиска","chromium","Tue Oct 07 01:58:02 UTC 2025","passed","Tue Oct 07 01:58:05 UTC 2025","Модуль Поиск","search.test.js","",""
-"","5230","Поиск по запросу через меню выдаёт корректный URL","chromium","Tue Oct 07 01:57:30 UTC 2025","passed","Tue Oct 07 01:57:35 UTC 2025","Модуль Поиск","search.test.js","",""
-"","6546","Повторный поиск по запросу через меню выдаёт корректные результаты","chromium","Tue Oct 07 01:57:49 UTC 2025","failed","Tue Oct 07 01:57:56 UTC 2025","Модуль Поиск","search.test.js","",""
